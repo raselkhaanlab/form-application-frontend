@@ -4,6 +4,7 @@ import {
   faExternalLinkAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import slogo from "assets/logo2.svg";
+import untitled from "assets/untitled.png";
 import DropdownWithIcon from "components/dropdown/DropdownwithIcon";
 import openInNewTab from "components/helpers/openInNewTab";
 import { LIST } from "data/viewTypes";
@@ -33,7 +34,7 @@ const FormTile = ({ formData, gridView, onClick, removeForm, renameForm }) => {
     openInNewTab(`/create/${formData.id}/edit`);
   };
 
-  if (gridView)
+  if (gridView) {
     return (
       <li className="w-full rounded-full cursor-pointer hover:bg-purple/10 flex justify-between items-center px-3 pl-6">
         <div onClick={onClick} className="w-3/4">
@@ -59,14 +60,16 @@ const FormTile = ({ formData, gridView, onClick, removeForm, renameForm }) => {
         )}
       </li>
     );
-  else
+  } 
+    
+  else {
     return (
       <div
         onClick={onClick}
         className="w-56 h-60 mr-5 mb-5 border cursor-pointer border-hoverGrey hover:border-purple rounded-md"
       >
         <div className="h-2/3">
-          <img src={formData.img} alt={formData.title} />
+          <img src={untitled} alt={formData.title} />
         </div>
         <div className="h-1/3 py-4 pr-2 pl-4 flex flex-col">
           <div className="text-black">{formData.title}</div>
@@ -91,6 +94,7 @@ const FormTile = ({ formData, gridView, onClick, removeForm, renameForm }) => {
         </div>
       </div>
     );
+  }
 };
 
 FormTile.defaultProps = {
