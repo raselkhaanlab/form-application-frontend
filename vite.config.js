@@ -8,7 +8,9 @@ const __dirname = fileURLToPath(new URL('.', import.meta.url));
 export default defineConfig({
   resolve: {
     alias: {
-      'views': path.resolve(__dirname, 'src/views')
+      'views': path.resolve(__dirname, 'src/views'),
+      'data': path.resolve(__dirname, 'src/data'),
+
     }
   },
   plugins: [react()],
